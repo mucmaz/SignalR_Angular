@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+
+    <script src="/scripts/jquery-2.1.4.min.js"></script>
+    <script src="/scripts/angular.js"></script>
+    <script src="/scripts/Scripts.js"></script>
+    <script src="/scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="@Url.Content("/signalr/hubs")"></script>
+
+</head>
+<body>
+<div ng-controller="MainController" class="container body-content">
+    <div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+
+            </tr>
+            <tr ng-repeat="product in Products">
+                <td>{{product.Id}}</td>
+                <td>{{product.Name}}</td>
+                <td>{{product.Price}}</td>
+            </tr>
+        </table>
+    </div>
+    @RenderBody()
+</div>
+
+</body>
+</html>
